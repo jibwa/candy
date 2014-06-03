@@ -3787,7 +3787,7 @@ Candy.View.Pane = function(self, $) {
                     element: elem
                 };
                 if (elem.attr("id") === "chat-room-" + roomId) {
-                    elem.show();
+                    elem.addClass('chat-room-shown');
                     Candy.View.getCurrent().roomJid = roomJid;
                     self.Chat.setActiveTab(roomJid);
                     self.Chat.Toolbar.update(roomJid);
@@ -3803,7 +3803,7 @@ Candy.View.Pane = function(self, $) {
 					 */
                     $(Candy).triggerHandler("candy:view.room.after-show", evtData);
                 } else {
-                    elem.hide();
+                    elem.removeClass('chat-room-shown');
                     /** Event: candy:view.room.after-hide
 					 * After hiding a room
 					 *
